@@ -9,6 +9,9 @@ const SOCIAL_LOGINS = [
   { name: "구글", icon: FaGoogle, color: "red.500" },
   { name: "카카오", icon: FaComment, color: "yellow.500" },
   { name: "네이버", icon: FaBloggerB, color: "green.500" },
+  { name: "구글", icon: FaGoogle, color: "red.500" },
+  { name: "카카오", icon: FaComment, color: "yellow.500" },
+  { name: "네이버", icon: FaBloggerB, color: "green.500" },
 ];
 
 const Index = () => {
