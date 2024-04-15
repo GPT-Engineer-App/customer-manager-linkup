@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Heading, SimpleGrid, Icon, Text, IconButton } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { FaHome, FaStore, FaBuilding, FaStar, FaTools, FaArrowLeft } from "react-icons/fa";
-import CleanerReviews from "../components/CleanerReviews";
-import BottomTab from "../components/BottomTab";
+
+
 
 const 홈화면 = () => {
   const navigate = useNavigate();
@@ -50,9 +50,9 @@ const 홈화면 = () => {
             </Text>
           </a>
         </Box>
-        <CleanerReviews />
+        
       </Box>
-      <BottomTab />
+      
     </Box>
   );
 };
