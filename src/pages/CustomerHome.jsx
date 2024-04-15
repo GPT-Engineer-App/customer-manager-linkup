@@ -52,17 +52,9 @@ const 홈화면 = () => {
             <Icon as={FaHome} boxSize={12} />
             <Text>이사/입주청소</Text>
           </Box>
-          <Box textAlign="center" onClick={() => navigate("/commercial-cleaning-reservation")}>
-            <Icon as={FaStore} boxSize={12} />
-            <Text>상가청소</Text>
-          </Box>
           <Box textAlign="center" onClick={() => navigate("/office-cleaning-reservation")}>
             <Icon as={FaBuilding} boxSize={12} />
             <Text>사무실청소</Text>
-          </Box>
-          <Box textAlign="center" onClick={() => navigate("/commercial-cleaning-reservation")}>
-            <Icon as={FaStore} boxSize={12} />
-            <Text>상가청소</Text>
           </Box>
           <Box textAlign="center" onClick={() => navigate("/special-cleaning-reservation")}>
             <Icon as={FaStar} boxSize={12} />
