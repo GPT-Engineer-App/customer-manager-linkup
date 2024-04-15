@@ -1,12 +1,15 @@
-import React from "react";
-import { Box, Heading, SimpleGrid, Icon, Text, IconButton } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Heading, SimpleGrid, Icon, Text, IconButton, Input, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { FaHome, FaStore, FaBuilding, FaStar, FaTools, FaArrowLeft } from "react-icons/fa";
 
-
-
 const 홈화면 = () => {
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = () => {
+    console.log("Search query:", searchQuery);
+  };
 
   return (
     <Box>
@@ -43,6 +46,17 @@ const 홈화면 = () => {
           </Box>
         </SimpleGrid>
         <Box my={8}>
+          <Heading size="lg" mb={4}>
+            청소매니저 검색
+          </Heading>
+          <Box display="flex" alignItems="center">
+            <Input placeholder="청소매니저 이름 검색" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} mr={4} />
+            <Button colorScheme="blue" onClick={handleSearch}>
+              검색
+            </Button>
+          </Box>
+        </Box>
+        <Box my={8}>
           <a href="https://example.com/ad" target="_blank" rel="noopener noreferrer">
             <img src="/path/to/ad-banner.jpg" alt="Advertisement" />
             <Text textAlign="center" mt={2}>
@@ -50,9 +64,7 @@ const 홈화면 = () => {
             </Text>
           </a>
         </Box>
-        
       </Box>
-      
     </Box>
   );
 };
