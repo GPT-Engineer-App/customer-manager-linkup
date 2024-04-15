@@ -2,6 +2,28 @@ import React, { useState } from "react";
 import { Box, Heading, SimpleGrid, Icon, Text, IconButton, Input, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { FaHome, FaStore, FaBuilding, FaStar, FaTools, FaArrowLeft } from "react-icons/fa";
+import CleanerProfileSlider from "../components/CleanerProfileSlider";
+
+const sampleCleaners = [
+  {
+    id: 1,
+    name: "김철수",
+    rating: 4.5,
+    profileImage: "/path/to/profile1.jpg",
+  },
+  {
+    id: 2,
+    name: "이영희",
+    rating: 4.8,
+    profileImage: "/path/to/profile2.jpg",
+  },
+  {
+    id: 3,
+    name: "박민수",
+    rating: 4.2,
+    profileImage: "/path/to/profile3.jpg",
+  },
+];
 
 const 홈화면 = () => {
   const navigate = useNavigate();
@@ -63,6 +85,12 @@ const 홈화면 = () => {
               광고 문구
             </Text>
           </a>
+        </Box>
+        <Box my={8}>
+          <Heading size="lg" mb={4} textAlign="center">
+            이달의 우수 청소매니저
+          </Heading>
+          <CleanerProfileSlider cleaners={sampleCleaners} />
         </Box>
       </Box>
     </Box>
