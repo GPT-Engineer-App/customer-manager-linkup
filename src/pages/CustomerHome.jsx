@@ -60,10 +60,6 @@ const 홈화면 = () => {
             <Icon as={FaBuilding} boxSize={12} />
             <Text>사무실청소</Text>
           </Box>
-          <Box textAlign="center" onClick={() => navigate("/commercial-cleaning-reservation")}>
-            <Icon as={FaStore} boxSize={12} />
-            <Text>상가청소</Text>
-          </Box>
           <Box textAlign="center" onClick={() => navigate("/special-cleaning-reservation")}>
             <Icon as={FaStar} boxSize={12} />
             <Text>특수청소</Text>
