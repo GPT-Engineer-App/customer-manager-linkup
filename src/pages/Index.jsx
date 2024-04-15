@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Button, Center, Heading, VStack } from "@chakra-ui/react";
+import { Box, Button, Center, Heading, VStack, Text } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaGoogle, FaComment, FaBloggerB } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SOCIAL_LOGINS = [
   { name: "페이스북", icon: FaFacebook, color: "facebook" },
@@ -23,6 +24,12 @@ const Index = () => {
               {name}으로 로그인
             </Button>
           ))}
+          <Text>
+            아직 회원이 아니신가요?{" "}
+            <Link to="/signup" color="blue.500">
+              회원가입
+            </Link>
+          </Text>
         </VStack>
       </Box>
     </Center>
