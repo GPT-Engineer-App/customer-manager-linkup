@@ -6,6 +6,7 @@ import CleanerProfile from "./pages/CleanerProfile.jsx";
 import MovingCleaningReservation from "./pages/MovingCleaningReservation.jsx";
 import CommercialCleaningReservation from "./pages/CommercialCleaningReservation.jsx";
 import OfficeCleaningReservation from "./pages/OfficeCleaningReservation.jsx";
+import SpecialCleaningReservation from "./pages/SpecialCleaningReservation.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/moving-cleaning-reservation" element={<MovingCleaningReservation />} />
         <Route path="/commercial-cleaning-reservation" element={<CommercialCleaningReservation />} />
         <Route path="/office-cleaning-reservation" element={<OfficeCleaningReservation />} />
+        <Route path="/special-cleaning-reservation" element={<SpecialCleaningReservation />} />
       </Routes>
     </Router>
   );
