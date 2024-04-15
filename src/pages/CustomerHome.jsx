@@ -25,6 +25,8 @@ const sampleCleaners = [
   },
 ];
 
+import BottomTabNav from "../components/BottomTabNav";
+
 const 홈화면 = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
@@ -34,7 +36,7 @@ const 홈화면 = () => {
   };
 
   return (
-    <Box>
+    <Box pb={16}>
       <Box mb={8}>
         <IconButton icon={<FaArrowLeft />} aria-label="Back" position="absolute" top={4} left={4} onClick={() => navigate(-1)} />
         <Heading size="xl" textAlign="center">
@@ -93,6 +95,7 @@ const 홈화면 = () => {
           <CleanerProfileSlider cleaners={sampleCleaners} />
         </Box>
       </Box>
+      <BottomTabNav />
     </Box>
   );
 };
