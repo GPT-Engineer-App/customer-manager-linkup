@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, HStack, VStack, Button, Text } from "@chakra-ui/react";
-import { FaHome, FaSearch, FaCalendarAlt, FaUser } from "react-icons/fa";
+import { FaHome, FaCalendarAlt, FaHistory, FaComments, FaCog } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const BottomTabNav = () => {
@@ -9,28 +9,34 @@ const BottomTabNav = () => {
   return (
     <Box bg="white" py={2} position="fixed" bottom={0} left={0} right={0} borderTopWidth={1}>
       <HStack justify="space-around">
-        <Button variant="ghost" onClick={() => navigate("/customer-home")}>
+        <Button variant="ghost" onClick={() => navigate("/home")}>
           <VStack spacing={1}>
             <FaHome />
             <Text fontSize="xs">홈</Text>
           </VStack>
         </Button>
-        <Button variant="ghost" onClick={() => navigate("/search")}>
-          <VStack spacing={1}>
-            <FaSearch />
-            <Text fontSize="xs">검색</Text>
-          </VStack>
-        </Button>
-        <Button variant="ghost" onClick={() => navigate("/reservations")}>
+        <Button variant="ghost" onClick={() => navigate("/my-reservations")}>
           <VStack spacing={1}>
             <FaCalendarAlt />
-            <Text fontSize="xs">예약내역</Text>
+            <Text fontSize="xs">내 예약</Text>
           </VStack>
         </Button>
-        <Button variant="ghost" onClick={() => navigate("/mypage")}>
+        <Button variant="ghost" onClick={() => navigate("/usage-history")}>
           <VStack spacing={1}>
-            <FaUser />
-            <Text fontSize="xs">마이페이지</Text>
+            <FaHistory />
+            <Text fontSize="xs">이용 내역</Text>
+          </VStack>
+        </Button>
+        <Button variant="ghost" onClick={() => navigate("/chat")}>
+          <VStack spacing={1}>
+            <FaComments />
+            <Text fontSize="xs">채팅</Text>
+          </VStack>
+        </Button>
+        <Button variant="ghost" onClick={() => navigate("/settings")}>
+          <VStack spacing={1}>
+            <FaCog />
+            <Text fontSize="xs">설정</Text>
           </VStack>
         </Button>
       </HStack>

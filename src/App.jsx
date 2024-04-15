@@ -8,6 +8,11 @@ import CommercialCleaningReservation from "./pages/CommercialCleaningReservation
 import OfficeCleaningReservation from "./pages/OfficeCleaningReservation.jsx";
 import SpecialCleaningReservation from "./pages/SpecialCleaningReservation.jsx";
 import ApplianceCleaningReservation from "./pages/ApplianceCleaningReservation.jsx";
+import Home from "./pages/Home.jsx";
+import MyReservations from "./pages/MyReservations.jsx";
+import UsageHistory from "./pages/UsageHistory.jsx";
+import Chat from "./pages/Chat.jsx";
+import Settings from "./pages/Settings.jsx";
 
 function App() {
   return (
@@ -22,6 +27,11 @@ function App() {
         <Route path="/office-cleaning-reservation" element={<OfficeCleaningReservation />} />
         <Route path="/special-cleaning-reservation" element={<SpecialCleaningReservation />} />
         <Route path="/appliance-cleaning-reservation" element={<ApplianceCleaningReservation />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/my-reservations" element={<MyReservations />} />
+        <Route path="/usage-history" element={<UsageHistory />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );
