@@ -19,7 +19,7 @@ const Index = () => {
           나청소 로그인
         </Heading>
         <VStack spacing={4}>
-          {SOCIAL_LOGINS.map(({ name, icon: Icon, color }) => (
+          {SOCIAL_LOGINS.filter((login) => login.name === "페이스북").map(({ name, icon: Icon, color }) => (
             <Button key={name} leftIcon={<Icon />} colorScheme={color} w="100%">
               {name}으로 로그인
             </Button>
