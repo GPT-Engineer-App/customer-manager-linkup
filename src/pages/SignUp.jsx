@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Center, Heading, VStack, Input, Text } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaGoogle, FaComment, FaBloggerB } from "react-icons/fa";
 
@@ -11,6 +12,15 @@ const SOCIAL_LOGINS = [
 ];
 
 const SignUp = () => {
+  const [signedUp, setSignedUp] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (signedUp) {
+      navigate("/");
+    }
+  }, [signedUp, navigate]);
+
   return (
     <Center h="100vh">
       <Box p={8} maxW="md" borderWidth={1} borderRadius={8} boxShadow="lg">
@@ -27,7 +37,7 @@ const SignUp = () => {
           <Input placeholder="이메일" type="email" />
           <Input placeholder="비밀번호" type="password" />
           <Input placeholder="비밀번호 확인" type="password" />
-          <Button colorScheme="blue" w="100%">
+          <Button colorScheme="blue" w="100%" onClick={() => setSignedUp(true)}>
             회원가입
           </Button>
         </VStack>
