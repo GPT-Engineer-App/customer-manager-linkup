@@ -16,7 +16,7 @@ const Index = () => {
     <Center h="100vh">
       <Box p={8} maxW="md" borderWidth={1} borderRadius={8} boxShadow="lg">
         <Heading mb={6} textAlign="center">
-          로그인
+          나청소 로그인
         </Heading>
         <VStack spacing={4}>
           {SOCIAL_LOGINS.map(({ name, icon: Icon, color }) => (

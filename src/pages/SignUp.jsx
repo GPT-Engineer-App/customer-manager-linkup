@@ -6,7 +6,7 @@ const SignUp = () => {
     <Center h="100vh">
       <Box p={8} maxW="md" borderWidth={1} borderRadius={8} boxShadow="lg">
         <Heading mb={6} textAlign="center">
-          회원가입
+          나청소 회원가입
         </Heading>
         <VStack spacing={4}>
           <Input placeholder="이메일" type="email" />
