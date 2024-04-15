@@ -1,18 +1,19 @@
 import React from "react";
-import { Box, Heading, SimpleGrid, Icon, Text } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Icon, Text, IconButton } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaStore, FaBuilding, FaStar, FaTools } from "react-icons/fa";
+import { FaHome, FaStore, FaBuilding, FaStar, FaTools, FaArrowLeft } from "react-icons/fa";
 import CleanerReviews from "../components/CleanerReviews";
 import BottomTab from "../components/BottomTab";
 
-const CustomerHome = () => {
+const 홈화면 = () => {
   const navigate = useNavigate();
 
   return (
     <Box>
       <Box mb={8}>
+        <IconButton icon={<FaArrowLeft />} aria-label="Back" position="absolute" top={4} left={4} onClick={() => navigate(-1)} />
         <Heading size="xl" textAlign="center">
-          고객 홈
+          홈화면
         </Heading>
       </Box>
       <Box p={4}>
@@ -45,7 +46,7 @@ const CustomerHome = () => {
           <a href="https://example.com/ad" target="_blank" rel="noopener noreferrer">
             <img src="/path/to/ad-banner.jpg" alt="Advertisement" />
             <Text textAlign="center" mt={2}>
-              광고 문구 
+              광고 문구
             </Text>
           </a>
         </Box>
@@ -56,4 +57,4 @@ const CustomerHome = () => {
   );
 };
 
-export default CustomerHome;
+export default 홈화면;
