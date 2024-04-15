@@ -1,8 +1,15 @@
 import React from "react";
-import { Box, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Heading, Text, Image, Button } from "@chakra-ui/react";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-const CleanerProfileCard = ({ name, rating, profileImage }) => {
+const CleanerProfileCard = ({ id, name, rating, profileImage }) => {
+  const navigate = useNavigate();
+
+  const handleViewProfile = () => {
+    navigate(`/cleaner-profile/${id}`);
+  };
+
   return (
     <Box borderWidth={1} borderRadius="lg" overflow="hidden" p={4} textAlign="center">
       <Image src={profileImage} alt={name} borderRadius="full" boxSize="150px" mx="auto" />
@@ -17,6 +24,9 @@ const CleanerProfileCard = ({ name, rating, profileImage }) => {
           ))}
         <Text ml={2}>{rating.toFixed(1)}</Text>
       </Box>
+      <Button mt={4} colorScheme="blue" onClick={handleViewProfile}>
+        프로필 보기
+      </Button>
     </Box>
   );
 };
