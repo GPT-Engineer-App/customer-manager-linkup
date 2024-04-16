@@ -61,6 +61,11 @@ const MyReservations = () => {
     setReservations(reservations.filter((reservation) => reservation.id !== reservationId));
   };
 
+  const handleSelectEstimate = (estimate) => {
+    console.log("Selected estimate:", estimate);
+   
+  };
+
   return (
     <Box mx={4}>
       <Box display="flex" alignItems="center" mb={4}>
@@ -78,10 +83,15 @@ const MyReservations = () => {
           <Box mt={4}>
             <Text fontWeight="bold">견적 목록:</Text>
             {reservation.estimates.map((estimate) => (
-              <Box key={estimate.cleanerId} borderWidth={1} borderRadius="md" p={2} mb={2}>
-                <Text>청소매니저: {estimate.cleanerName}</Text>
-                <Text>견적 금액: {estimate.amount}원</Text>
-                <Text>견적 내용: {estimate.details}</Text>
+              <Box key={estimate.cleanerId} borderWidth={1} borderRadius="md" p={2} mb={2} display="flex" justifyContent="space-between" alignItems="center">
+                <Box>
+                  <Text>청소매니저: {estimate.cleanerName}</Text>
+                  <Text>견적 금액: {estimate.amount}원</Text>
+                  <Text>견적 내용: {estimate.details}</Text>
+                </Box>
+                <Button size="sm" colorScheme="green" onClick={() => handleSelectEstimate(estimate)}>
+                  Select
+                </Button>
               </Box>
             ))}
           </Box>
