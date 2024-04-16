@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([
@@ -17,6 +18,16 @@ const MyReservations = () => {
     },
   ]);
 
+  const navigate = useNavigate();
+
+  const handleEdit = (reservationId) => {
+    navigate(`/edit-reservation/${reservationId}`);
+  };
+
+  const handleCancel = (reservationId) => {
+    setReservations(reservations.filter((reservation) => reservation.id !== reservationId));
+  };
+
   return (
     <Box>
       <Heading mb={4}>내 예약</Heading>
@@ -25,6 +36,12 @@ const MyReservations = () => {
           <Text fontWeight="bold">{reservation.type}</Text>
           <Text>날짜: {reservation.date}</Text>
           <Text>시간: {reservation.time}</Text>
+          <Button colorScheme="blue" size="sm" mr={2} onClick={() => handleEdit(reservation.id)}>
+            수정
+          </Button>
+          <Button colorScheme="red" size="sm" onClick={() => handleCancel(reservation.id)}>
+            취소
+          </Button>
         </Box>
       ))}
     </Box>
