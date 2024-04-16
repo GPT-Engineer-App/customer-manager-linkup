@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, IconButton } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([
@@ -29,8 +30,11 @@ const MyReservations = () => {
   };
 
   return (
-    <Box>
-      <Heading mb={4}>내 예약</Heading>
+    <Box mx={4}>
+      <Box display="flex" alignItems="center" mb={4}>
+        <IconButton icon={<FaArrowLeft />} variant="ghost" onClick={() => navigate(-1)} mr={2} />
+        <Heading flexGrow={1}>내 예약</Heading>
+      </Box>
       {reservations.map((reservation) => (
         <Box key={reservation.id} borderWidth={1} borderRadius="md" p={4} mb={4}>
           <Text fontWeight="bold">{reservation.type}</Text>
