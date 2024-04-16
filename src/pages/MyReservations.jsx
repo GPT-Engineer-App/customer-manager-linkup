@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading, Text, Button, IconButton, useDisclosure } from "@chakra-ui/react";
-import QuotationModal from "../components/QuotationModal";
+import { Box, Heading, Text, Button, IconButton } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -31,12 +30,10 @@ const MyReservations = () => {
   ]);
 
   const navigate = useNavigate();
-  const { isOpen: isQuotationModalOpen, onOpen: onQuotationModalOpen, onClose: onQuotationModalClose } = useDisclosure();
-  const [selectedQuotation, setSelectedQuotation] = useState(null);
 
   const handleViewQuote = (quotation) => {
-    setSelectedQuotation(quotation);
-    onQuotationModalOpen();
+   
+    console.log("View quotation:", quotation);
   };
 
   const handleEdit = (reservationId) => {
@@ -65,12 +62,9 @@ const MyReservations = () => {
             취소
           </Button>
           {reservation.quotation && (
-            <>
-              <Button colorScheme="green" size="sm" onClick={() => handleViewQuote(reservation.quotation)}>
-                견적 보기
-              </Button>
-              <QuotationModal isOpen={isQuotationModalOpen} onClose={onQuotationModalClose} quotation={selectedQuotation} />
-            </>
+            <Button colorScheme="green" size="sm" onClick={() => handleViewQuote(reservation.quotation)}>
+              견적 보기
+            </Button>
           )}
         </Box>
       ))}
