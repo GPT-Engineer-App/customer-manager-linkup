@@ -61,9 +61,18 @@ const MyReservations = () => {
     setReservations(reservations.filter((reservation) => reservation.id !== reservationId));
   };
 
-  const handleSelectEstimate = (estimate) => {
-    console.log("Selected estimate:", estimate);
-   
+  const handleSelectEstimate = (selectedEstimate) => {
+    setReservations(
+      reservations.map((reservation) => {
+        if (reservation.estimates.some((estimate) => estimate.cleanerId === selectedEstimate.cleanerId)) {
+          return {
+            ...reservation,
+            selectedEstimate,
+          };
+        }
+        return reservation;
+      }),
+    );
   };
 
   return (
