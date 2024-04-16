@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <Center h="100vh">
       <Box p={8} maxW="md" borderWidth={1} borderRadius={8} boxShadow="lg">
-        <Heading mb={6} textAlign="center">
+        <Heading mb={6} textAlign="center" color="brand.600">
           나청소 로그인
         </Heading>
         <VStack spacing={4}>
