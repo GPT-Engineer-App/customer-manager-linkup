@@ -68,10 +68,23 @@ const MyReservations = () => {
         <Heading flexGrow={1}>내 예약</Heading>
       </Box>
       {reservations.map((reservation) => (
-        <Box key={reservation.id} borderWidth={1} borderRadius="md" p={4} mb={4}>
-          <Text fontWeight="bold">{reservation.type}</Text>
+        <Box key={reservation.id} borderWidth={1} borderRadius="md" p={4} mb={8}>
+          <Text fontWeight="bold" fontSize="xl">
+            {reservation.type}
+          </Text>
           <Text>날짜: {reservation.date}</Text>
           <Text>시간: {reservation.time}</Text>
+
+          <Box mt={4}>
+            <Text fontWeight="bold">견적 목록:</Text>
+            {reservation.estimates.map((estimate) => (
+              <Box key={estimate.cleanerId} borderWidth={1} borderRadius="md" p={2} mb={2}>
+                <Text>청소매니저: {estimate.cleanerName}</Text>
+                <Text>견적 금액: {estimate.amount}원</Text>
+                <Text>견적 내용: {estimate.details}</Text>
+              </Box>
+            ))}
+          </Box>
           <Button colorScheme="blue" size="sm" mr={2} onClick={() => handleEdit(reservation.id)}>
             수정
           </Button>
