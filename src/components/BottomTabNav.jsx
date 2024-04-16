@@ -9,12 +9,6 @@ const BottomTabNav = () => {
   return (
     <Box bg="white" py={2} position="fixed" bottom={0} left={0} right={0} borderTopWidth={1}>
       <HStack justify="space-around">
-        <Button variant="ghost" onClick={() => navigate("/home")}>
-          <VStack spacing={1}>
-            <FaHome />
-            <Text fontSize="xs">홈</Text>
-          </VStack>
-        </Button>
         <Button variant="ghost" onClick={() => navigate("/my-reservations")}>
           <VStack spacing={1}>
             <FaCalendarAlt />
