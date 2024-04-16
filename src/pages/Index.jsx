@@ -29,7 +29,7 @@ const Index = () => {
           ))}
           <Text>
             아직 회원이 아니신가요?{" "}
-            <Link to="/signup" color="blue.500">
+            <Link to="/signup" color="red.500" fontWeight="bold">
               회원가입
             </Link>
           </Text>
