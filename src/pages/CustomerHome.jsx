@@ -88,17 +88,6 @@ const 홈화면 = () => {
           </Box>
         </Box>
         <Box my={8}>
-          <Heading size="lg" mb={4}>
-            청소매니저 검색
-          </Heading>
-          <Box display="flex" alignItems="center">
-            <Input placeholder="청소매니저 이름 검색" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} mr={4} />
-            <Button colorScheme="blue" onClick={handleSearch}>
-              검색
-            </Button>
-          </Box>
-        </Box>
-        <Box my={8}>
           <Heading size="lg" mb={4} textAlign="center">
             이달의 우수 청소매니저
           </Heading>
