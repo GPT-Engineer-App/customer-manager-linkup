@@ -36,6 +36,11 @@ const MyReservations = () => {
     console.log("View quotation:", quotation);
   };
 
+  const handleSelectQuote = (reservationId, quotationId) => {
+   
+    console.log("Select quotation:", reservationId, quotationId);
+  };
+
   const handleEdit = (reservationId) => {
     navigate(`/edit-reservation/${reservationId}`);
   };
@@ -61,10 +66,24 @@ const MyReservations = () => {
           <Button colorScheme="red" size="sm" mr={2} onClick={() => handleCancel(reservation.id)}>
             취소
           </Button>
-          {reservation.quotation && (
-            <Button colorScheme="green" size="sm" onClick={() => handleViewQuote(reservation.quotation)}>
-              견적 보기
-            </Button>
+          {reservation.quotations && reservation.quotations.length > 0 && (
+            <>
+              <Text fontWeight="bold" mt={2}>
+                제출된 견적:
+              </Text>
+              {reservation.quotations.map((quotation) => (
+                <Box key={quotation.id} borderWidth={1} borderRadius="md" p={2} mb={2}>
+                  <Text>청소매니저: {quotation.cleanerName}</Text>
+                  <Text>견적 금액: {quotation.amount}원</Text>
+                  <Button size="sm" mr={2} onClick={() => handleViewQuote(quotation)}>
+                    상세 보기
+                  </Button>
+                  <Button size="sm" colorScheme="green" onClick={() => handleSelectQuote(reservation.id, quotation.id)}>
+                    견적 선택
+                  </Button>
+                </Box>
+              ))}
+            </>
           )}
         </Box>
       ))}
