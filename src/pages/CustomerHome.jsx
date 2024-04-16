@@ -37,8 +37,7 @@ const 홈화면 = () => {
 
   return (
     <Box pb={16}>
-      <Box mb={8}>
-        <IconButton icon={<FaArrowLeft />} aria-label="Back" position="absolute" top={4} left={4} onClick={() => navigate(-1)} />
+      <Box mb={4}>
         <Heading size="xl" textAlign="center">
           홈화면
         </Heading>
