@@ -13,8 +13,6 @@ import MyReservations from "./pages/MyReservations.jsx";
 import UsageHistory from "./pages/UsageHistory.jsx";
 import Chat from "./pages/Chat.jsx";
 import Settings from "./pages/Settings.jsx";
-import AdminLogin from "./pages/AdminLogin.jsx";
-import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 function App() {
   return (
