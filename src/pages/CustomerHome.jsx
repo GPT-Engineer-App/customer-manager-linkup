@@ -82,7 +82,7 @@ const 홈화면 = () => {
           </Heading>
           <Box display="flex" alignItems="center">
             <Input placeholder="청소매니저 이름 검색" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} mr={4} />
-            <Button colorScheme="blue" onClick={handleSearch}>
+            <Button colorScheme="brand" onClick={handleSearch} bgGradient="linear(to-r, brand.500, brand.300)">
               검색
             </Button>
           </Box>
