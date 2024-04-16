@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading, SimpleGrid, Icon, Text, IconButton, Input, Button } from "@chakra-ui/react";
+import { Box, Heading, Flex, Icon, Text, IconButton, Input, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { FaHome, FaStore, FaBuilding, FaStar, FaTools, FaArrowLeft } from "react-icons/fa";
 import CleanerProfileSlider from "../components/CleanerProfileSlider";
@@ -46,28 +46,28 @@ const 홈화면 = () => {
         <Heading size="lg" mb={4}>
           서비스 유형
         </Heading>
-        <SimpleGrid columns={3} spacing={4} mb={8}>
-          <Box textAlign="center" onClick={() => navigate("/moving-cleaning-reservation")}>
+        <Flex flexWrap="wrap" justifyContent="center" mb={8}>
+          <Box flexBasis={["50%", "33.33%"]} flexGrow={1} p={4} textAlign="center" borderWidth={1} borderRadius="md" m={2} cursor="pointer" _hover={{ bg: "gray.100" }} onClick={() => navigate("/moving-cleaning-reservation")}>
             <Icon as={FaHome} boxSize={12} />
-            <Text>이사/입주청소</Text>
+            <Text mt={2}>이사/입주청소</Text>
           </Box>
-          <Box textAlign="center" onClick={() => navigate("/commercial-cleaning-reservation")}>
+          <Box flexBasis={["50%", "33.33%"]} flexGrow={1} p={4} textAlign="center" borderWidth={1} borderRadius="md" m={2} cursor="pointer" _hover={{ bg: "gray.100" }} onClick={() => navigate("/commercial-cleaning-reservation")}>
             <Icon as={FaStore} boxSize={12} />
-            <Text>상가청소</Text>
+            <Text mt={2}>상가청소</Text>
           </Box>
-          <Box textAlign="center" onClick={() => navigate("/office-cleaning-reservation")}>
+          <Box flexBasis={["50%", "33.33%"]} flexGrow={1} p={4} textAlign="center" borderWidth={1} borderRadius="md" m={2} cursor="pointer" _hover={{ bg: "gray.100" }} onClick={() => navigate("/office-cleaning-reservation")}>
             <Icon as={FaBuilding} boxSize={12} />
-            <Text>사무실청소</Text>
+            <Text mt={2}>사무실청소</Text>
           </Box>
-          <Box textAlign="center" onClick={() => navigate("/special-cleaning-reservation")}>
+          <Box flexBasis={["50%", "33.33%"]} flexGrow={1} p={4} textAlign="center" borderWidth={1} borderRadius="md" m={2} cursor="pointer" _hover={{ bg: "gray.100" }} onClick={() => navigate("/special-cleaning-reservation")}>
             <Icon as={FaStar} boxSize={12} />
-            <Text>특수청소</Text>
+            <Text mt={2}>특수청소</Text>
           </Box>
-          <Box textAlign="center" onClick={() => navigate("/appliance-cleaning-reservation")}>
+          <Box flexBasis={["50%", "33.33%"]} flexGrow={1} p={4} textAlign="center" borderWidth={1} borderRadius="md" m={2} cursor="pointer" _hover={{ bg: "gray.100" }} onClick={() => navigate("/appliance-cleaning-reservation")}>
             <Icon as={FaTools} boxSize={12} />
-            <Text>가전청소</Text>
+            <Text mt={2}>가전청소</Text>
           </Box>
-        </SimpleGrid>
+        </Flex>
         <Box my={8}>
           <a href="https://example.com/ad" target="_blank" rel="noopener noreferrer">
             <img src="/path/to/ad-banner.jpg" alt="Advertisement" />
