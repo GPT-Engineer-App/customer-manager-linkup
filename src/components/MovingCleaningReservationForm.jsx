@@ -21,14 +21,56 @@ const MovingCleaningReservationForm = () => {
 
   const toast = useToast();
 
-  const handleSubmit = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: "예약이 접수되었습니다",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/reservations/moving", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          address,
+          serviceType,
+          housingType,
+          area,
+          rooms,
+          bathrooms,
+          specialAreas,
+          date,
+          time,
+          additionalServices,
+          paymentMethod,
+          reservationFee,
+          specialRequests,
+        }),
+      });
+      if (!response.ok) throw new Error("Network response was not ok");
+      toast({
+        title: "예약이 접수되었습니다",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+    } catch (error) {
+      setError(error.message);
+      toast({
+        title: "Error submitting reservation",
+        description: error.message,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+    setIsLoading(false);
   };
 
   return (

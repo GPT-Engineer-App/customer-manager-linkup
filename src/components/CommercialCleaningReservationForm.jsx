@@ -19,15 +19,53 @@ const CommercialCleaningReservationForm = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: "예약이 접수되었습니다",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
-    navigate("/customer-home");
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/reservations/commercial", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          storeName,
+          address,
+          storeSize,
+          storeType,
+          serviceType,
+          specialRequests,
+          date,
+          time,
+          additionalInfo,
+        }),
+      });
+      if (!response.ok) throw new Error("Network response was not ok");
+      toast({
+        title: "예약이 접수되었습니다",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+      navigate("/customer-home");
+    } catch (error) {
+      setError(error.message);
+      toast({
+        title: "Error submitting reservation",
+        description: error.message,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+    setIsLoading(false);
   };
 
   return (
