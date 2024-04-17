@@ -5,21 +5,21 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const colors = {
   brand: {
-    900: "#4a148c",
-    800: "#6a1b9a",
-    700: "#7b1fa2",
-    600: "#8e24aa",
-    500: "#9c27b0",
-    400: "#ab47bc",
-    300: "#ba68c8",
-    200: "#ce93d8",
-    100: "#e1bee7",
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
+    600: "#3182ce",
+    500: "#4299e1",
+    400: "#63b3ed",
+    300: "#90cdf4",
+    200: "#bee3f8",
+    100: "#ebf8ff",
   },
 };
 
 const fonts = {
-  heading: "Roboto, sans-serif",
-  body: "Open Sans, sans-serif",
+  heading: "Noto Sans KR, sans-serif",
+  body: "Noto Sans KR, sans-serif",
 };
 
 const theme = extendTheme({ colors, fonts });
