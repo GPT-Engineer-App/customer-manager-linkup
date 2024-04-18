@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Center, Heading, VStack, Input, Text } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaGoogle, FaComment, FaBloggerB } from "react-icons/fa";
@@ -12,32 +12,38 @@ const SOCIAL_LOGINS = [
 ];
 
 const SignUp = () => {
-  const [signedUp, setSignedUp] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (signedUp) {
-      navigate("/customer-home");
-    }
-  }, [signedUp, navigate]);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      confirmPassword: formData.get("confirmPassword"),
+    };
+
+    console.log(data);
+    navigate("/customer-home");
+  };
 
   return (
     <Center h="100vh">
-      <Box p={8} maxW="md" borderWidth={1} borderRadius={8} boxShadow="lg">
+      <Box as="form" onSubmit={handleSubmit} p={8} maxW="md" borderWidth={1} borderRadius={8} boxShadow="lg">
         <Heading mb={6} textAlign="center">
           나청소 회원가입
         </Heading>
         <VStack spacing={4}>
           {SOCIAL_LOGINS.map(({ name, icon: Icon, color }) => (
-            <Button key={name} leftIcon={<Icon />} colorScheme={color} w="100%">
+            <Button key={name} leftIcon={<Icon />} colorScheme={color} w="100%" type="button">
               {name}으로 회원가입
             </Button>
           ))}
           <Text>또는</Text>
-          <Input placeholder="이메일" type="email" />
-          <Input placeholder="비밀번호" type="password" />
-          <Input placeholder="비밀번호 확인" type="password" />
-          <Button colorScheme="blue" w="100%" onClick={() => setSignedUp(true)}>
+          <Input placeholder="이메일" name="email" type="email" required />
+          <Input placeholder="비밀번호" name="password" type="password" required />
+          <Input placeholder="비밀번호 확인" name="confirmPassword" type="password" required />
+          <Button colorScheme="blue" w="100%" type="submit">
             회원가입
           </Button>
         </VStack>

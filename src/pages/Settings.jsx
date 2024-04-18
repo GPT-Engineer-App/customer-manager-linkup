@@ -1,10 +1,16 @@
 import React from "react";
-import { Box, Text, VStack, Icon, HStack, IconButton } from "@chakra-ui/react";
+import { Box, Text, VStack, Icon, HStack, IconButton, Button } from "@chakra-ui/react";
 import { FaArrowLeft, FaUser, FaBell, FaQuestionCircle, FaEnvelope, FaComment, FaFileAlt, FaLock, FaBellSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import LoginForm from "../components/LoginForm";
 
 const 설정 = () => {
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    console.log("Logged out");
+    navigate("/");
+  };
 
   return (
     <Box p={4}>
@@ -15,7 +21,13 @@ const 설정 = () => {
         </Text>
       </HStack>
 
-      <VStack spacing={6} align="stretch">
+      <LoginForm />
+
+      <Button onClick={handleLogout} colorScheme="red" mt={4}>
+        로그아웃
+      </Button>
+
+      <VStack spacing={6} align="stretch" mt={4}>
         <HStack onClick={() => navigate("/edit-profile")}>
           <Icon as={FaUser} boxSize={6} />
           <Text fontSize="xl">프로필 수정</Text>
