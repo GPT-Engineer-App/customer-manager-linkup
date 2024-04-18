@@ -29,7 +29,7 @@ function App() {
         <Route exact path="/" element={<Index />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/customer-home" element={<CustomerHome />} />
-        <Route path="/cleaner-profile" element={<CleanerProfile />} />
+        <Route path="/cleaner-profile/:id" element={<CleanerProfile />} />
         <Route path="/moving-cleaning-reservation" element={<MovingCleaningReservation />} />
         <Route path="/commercial-cleaning-reservation" element={<CommercialCleaningReservation />} />
         <Route path="/office-cleaning-reservation" element={<OfficeCleaningReservation />} />

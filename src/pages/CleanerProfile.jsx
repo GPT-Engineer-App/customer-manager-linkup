@@ -1,7 +1,10 @@
-import React from 'react';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import React from "react";
+import { Box, Heading, Text } from "@chakra-ui/react";
+
+import { useParams } from "react-router-dom";
 
 const CleanerProfile = () => {
+  const { id } = useParams();
   return (
     <Box>
       <Heading>Cleaner Profile</Heading>
