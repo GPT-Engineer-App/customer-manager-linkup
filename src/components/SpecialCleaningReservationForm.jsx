@@ -20,14 +20,37 @@ const SpecialCleaningReservationForm = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const response = await fetch("/api/create/special-cleaning", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        email,
+        companyName,
+        address,
+        spaceSize,
+        spaceType,
+        cleaningType,
+        contaminantType,
+        safetyMeasures,
+        date,
+        time,
+        requests,
+      }),
+    });
+    if (!response.ok) throw new Error("Network response was not ok");
     toast({
       title: "특수 청소 예약이 접수되었습니다",
       status: "success",
       duration: 3000,
       isClosable: true,
     });
+    navigate("/customer-home");
     navigate("/customer-home");
   };
 

@@ -29,7 +29,7 @@ const MovingCleaningReservationForm = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("/api/reservations/moving", {
+      const response = await fetch("/api/create/moving-cleaning", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

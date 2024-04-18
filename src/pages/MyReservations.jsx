@@ -50,8 +50,10 @@ const MyReservations = () => {
   const navigate = useNavigate();
   const toast = useToast();
 
-  const handleViewQuote = (quotation) => {
-    console.log("View quotation:", quotation);
+  const handleViewQuote = async (quotation) => {
+    const response = await fetch(`/api/get/quotation?id=${quotation.cleanerId}`);
+    const data = await response.json();
+    console.log("Quotation details:", data);
   };
 
   const handleEdit = (reservationId) => {

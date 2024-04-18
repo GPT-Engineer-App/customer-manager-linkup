@@ -31,8 +31,10 @@ const 홈화면 = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearch = () => {
-    console.log("Search query:", searchQuery);
+  const handleSearch = async () => {
+    const response = await fetch(`/api/search/cleaners?query=${searchQuery}`);
+    const data = await response.json();
+    console.log("Search results:", data);
   };
 
   return (

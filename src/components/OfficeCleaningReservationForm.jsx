@@ -21,14 +21,38 @@ const OfficeCleaningReservationForm = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const response = await fetch("/api/create/office-cleaning", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        companyName,
+        phone,
+        email,
+        address,
+        officeSize,
+        numEmployees,
+        officeType,
+        serviceType,
+        cleaningAreas,
+        specialRequests,
+        date,
+        time,
+        additionalInfo,
+      }),
+    });
+    if (!response.ok) throw new Error("Network response was not ok");
     toast({
       title: "예약이 접수되었습니다",
       status: "success",
       duration: 3000,
       isClosable: true,
     });
+    navigate("/customer-home");
     navigate("/customer-home");
   };
 
