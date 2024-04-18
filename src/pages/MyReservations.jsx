@@ -108,6 +108,9 @@ const MyReservations = () => {
               <Text>청소매니저: {selectedEstimate.cleanerName}</Text>
               <Text>견적 금액: {selectedEstimate.amount}원</Text>
               <Text>견적 내용: {selectedEstimate.details}</Text>
+              <Button colorScheme="green" mt={2} onClick={() => alert(`결제 계약금 10%: ${selectedEstimate.amount * 0.1}원 결제가 진행됩니다.`)}>
+                결제 계약금 10% 납부
+              </Button>
             </Box>
           )}
         </Box>
