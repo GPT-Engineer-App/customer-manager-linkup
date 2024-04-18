@@ -26,35 +26,35 @@ const 설정 = () => {
       </Button>
 
       <VStack spacing={6} align="stretch" mt={4}>
-        <HStack onClick={() => navigate("/edit-profile")}>
+        <HStack onClick={() => console.log("Fetching profile details...")}>
           <Icon as={FaUser} boxSize={6} />
           <Text fontSize="xl">프로필 수정</Text>
         </HStack>
-        <HStack onClick={() => navigate("/notices")}>
+        <HStack onClick={() => console.log("Fetching notices...")}>
           <Icon as={FaBell} boxSize={6} />
           <Text fontSize="xl">공지사항</Text>
         </HStack>
-        <HStack onClick={() => navigate("/faq")}>
+        <HStack onClick={() => console.log("Fetching FAQ data...")}>
           <Icon as={FaQuestionCircle} boxSize={6} />
           <Text fontSize="xl">자주 묻는 질문</Text>
         </HStack>
-        <HStack onClick={() => navigate("/contact-us")}>
+        <HStack onClick={() => console.log("Fetching contact information...")}>
           <Icon as={FaEnvelope} boxSize={6} />
           <Text fontSize="xl">문의하기</Text>
         </HStack>
-        <HStack onClick={() => navigate("/feedback")}>
+        <HStack onClick={() => console.log("Fetching feedback data...")}>
           <Icon as={FaComment} boxSize={6} />
           <Text fontSize="xl">피드백</Text>
         </HStack>
-        <HStack onClick={() => navigate("/terms-of-use")}>
+        <HStack onClick={() => console.log("Fetching terms of use...")}>
           <Icon as={FaFileAlt} boxSize={6} />
           <Text fontSize="xl">이용약관</Text>
         </HStack>
-        <HStack onClick={() => navigate("/privacy-policy")}>
+        <HStack onClick={() => console.log("Fetching privacy policy details...")}>
           <Icon as={FaLock} boxSize={6} />
           <Text fontSize="xl">개인정보 보호정책</Text>
         </HStack>
-        <HStack onClick={() => navigate("/notification-settings")}>
+        <HStack onClick={() => console.log("Fetching notification settings...")}>
           <Icon as={FaBellSlash} boxSize={6} />
           <Text fontSize="xl">알림설정</Text>
         </HStack>
