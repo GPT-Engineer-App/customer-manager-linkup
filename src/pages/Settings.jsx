@@ -21,9 +21,7 @@ const 설정 = () => {
         </Text>
       </HStack>
 
-      <LoginForm />
-
-      <Button onClick={handleLogout} colorScheme="red" mt={4}>
+      <Button onClick={handleLogout} colorScheme="red" mt={8}>
         로그아웃
       </Button>
 
