@@ -61,18 +61,10 @@ const MyReservations = () => {
     setReservations(reservations.filter((reservation) => reservation.id !== reservationId));
   };
 
-  const handleSelectEstimate = (selectedEstimate) => {
-    setReservations(
-      reservations.map((reservation) => {
-        if (reservation.estimates.some((estimate) => estimate.cleanerId === selectedEstimate.cleanerId)) {
-          return {
-            ...reservation,
-            selectedEstimate,
-          };
-        }
-        return reservation;
-      }),
-    );
+  const [selectedEstimate, setSelectedEstimate] = useState(null);
+
+  const handleSelectEstimate = (estimate) => {
+    setSelectedEstimate(estimate);
   };
 
   return (
@@ -110,10 +102,13 @@ const MyReservations = () => {
           <Button colorScheme="red" size="sm" mr={2} onClick={() => handleCancel(reservation.id)}>
             취소
           </Button>
-          {reservation.quotation && (
-            <Button colorScheme="green" size="sm" onClick={() => handleViewQuote(reservation.quotation)}>
-              견적 보기
-            </Button>
+          {selectedEstimate && (
+            <Box mt={4} borderWidth={1} p={4}>
+              <Text fontWeight="bold">선택된 견적:</Text>
+              <Text>청소매니저: {selectedEstimate.cleanerName}</Text>
+              <Text>견적 금액: {selectedEstimate.amount}원</Text>
+              <Text>견적 내용: {selectedEstimate.details}</Text>
+            </Box>
           )}
         </Box>
       ))}
