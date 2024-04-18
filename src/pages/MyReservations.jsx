@@ -63,6 +63,10 @@ const MyReservations = () => {
 
   const [selectedEstimate, setSelectedEstimate] = useState(null);
 
+  const handlePayment = (estimate) => {
+    alert(`결제 계약금 10%: ${estimate.amount * 0.1}원 결제가 진행됩니다.`);
+  };
+
   const handleSelectEstimate = (estimate) => {
     setSelectedEstimate(estimate);
   };
@@ -108,7 +112,7 @@ const MyReservations = () => {
               <Text>청소매니저: {selectedEstimate.cleanerName}</Text>
               <Text>견적 금액: {selectedEstimate.amount}원</Text>
               <Text>견적 내용: {selectedEstimate.details}</Text>
-              <Button colorScheme="green" mt={2} onClick={() => alert(`결제 계약금 10%: ${selectedEstimate.amount * 0.1}원 결제가 진행됩니다.`)}>
+              <Button colorScheme="green" mt={2} onClick={() => handlePayment(selectedEstimate)}>
                 결제 계약금 10% 납부
               </Button>
             </Box>
