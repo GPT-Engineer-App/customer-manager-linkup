@@ -4,7 +4,7 @@ import { Box, Button, Center, Heading, VStack, Input, Text } from "@chakra-ui/re
 import { FaFacebook, FaInstagram, FaGoogle, FaComment, FaBloggerB } from "react-icons/fa";
 
 const SOCIAL_LOGINS = [
-  { name: "페이스북", icon: FaFacebook, color: "facebook" },
+  { name: "페이스북", icon: FaFacebook, color: "facebook", onClick: () => console.log("Facebook login clicked") },
   { name: "인스타그램", icon: FaInstagram, color: "pink.500" },
   { name: "구글", icon: FaGoogle, color: "red.500" },
   { name: "카카오", icon: FaComment, color: "yellow.500" },
