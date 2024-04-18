@@ -89,7 +89,26 @@ const CommercialCleaningReservationForm = () => {
         </FormControl>
         <FormControl isRequired>
           <FormLabel>주소</FormLabel>
-          <Input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
+          <Input
+            type="text"
+            value={address}
+            onChange={async (e) => {
+              setAddress(e.target.value);
+              if (e.target.value.length > 5) {
+                try {
+                  const response = await fetch(`https://dapi.kakao.com/v2/local/search/address.json?query=${e.target.value}`, {
+                    headers: {
+                      Authorization: "KakaoAK YOUR_REST_API_KEY",
+                    },
+                  });
+                  const data = await response.json();
+                  console.log(data);
+                } catch (error) {
+                  console.error("Failed to fetch address:", error);
+                }
+              }
+            }}
+          />
         </FormControl>
         <FormControl isRequired>
           <FormLabel>상가 크기(제곱미터 또는 평)</FormLabel>
