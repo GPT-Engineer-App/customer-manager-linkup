@@ -96,7 +96,7 @@ const MyReservations = () => {
               </Box>
             ))}
           </Box>
-          <Button colorScheme="blue" size="sm" mr={2} onClick={() => handleEdit(reservation.id)}>
+          <Button colorScheme="blue" size="sm" mr={2} onClick={() => navigate(`/edit-reservation/${reservation.id}`)}>
             수정
           </Button>
           <Button colorScheme="red" size="sm" mr={2} onClick={() => handleCancel(reservation.id)}>
