@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, HStack, VStack, Button, Text } from "@chakra-ui/react";
-import { FaHome, FaCalendarAlt, FaHistory, FaComments, FaCog } from "react-icons/fa";
+import { FaHome, FaCalendarAlt, FaHistory, FaComments, FaCog, FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const BottomTabNav = () => {
@@ -31,6 +31,24 @@ const BottomTabNav = () => {
           <VStack spacing={1}>
             <FaCog />
             <Text fontSize="xs">설정</Text>
+          </VStack>
+        </Button>
+        <Button variant="ghost" onClick={() => (window.location.href = "http://customer-app.example.com")}>
+          <VStack spacing={1}>
+            <FaHome />
+            <Text fontSize="xs">고객앱</Text>
+          </VStack>
+        </Button>
+        <Button variant="ghost" onClick={() => (window.location.href = "http://cleaner-app.example.com")}>
+          <VStack spacing={1}>
+            <FaStar />
+            <Text fontSize="xs">청소매니저앱</Text>
+          </VStack>
+        </Button>
+        <Button variant="ghost" onClick={() => (window.location.href = "http://admin-dashboard.example.com")}>
+          <VStack spacing={1}>
+            <FaCog />
+            <Text fontSize="xs">관리자 대쉬보드</Text>
           </VStack>
         </Button>
       </HStack>
