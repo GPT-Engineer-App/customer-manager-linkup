@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading, Text, Button, IconButton } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, IconButton, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -48,6 +48,7 @@ const MyReservations = () => {
   ]);
 
   const navigate = useNavigate();
+  const toast = useToast();
 
   const handleViewQuote = (quotation) => {
     console.log("View quotation:", quotation);
@@ -63,8 +64,41 @@ const MyReservations = () => {
 
   const [selectedEstimate, setSelectedEstimate] = useState(null);
 
-  const handlePayment = (estimate) => {
-    alert(`결제 계약금 10%: ${estimate.amount * 0.1}원 결제가 진행됩니다.`);
+  const handlePayment = async (estimate) => {
+    const depositAmount = estimate.amount * 0.1;
+    try {
+      const response = await fetch("/api/pay-deposit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          reservationId: estimate.cleanerId,
+          depositAmount,
+        }),
+      });
+      if (!response.ok) throw new Error("Payment failed");
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: "Payment successful",
+          description: `10% deposit of ${depositAmount}원 has been paid.`,
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        throw new Error(result.message);
+      }
+    } catch (error) {
+      toast({
+        title: "Payment failed",
+        description: error.message,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
   };
 
   const handleSelectEstimate = (estimate) => {
