@@ -13,8 +13,27 @@ const LoginForm = () => {
       password: formData.get("password"),
     };
 
-    console.log(data);
-    navigate("/customer-home");
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error("Login failed");
+
+      const result = await response.json();
+      if (result.success) {
+        navigate("/customer-home");
+      } else {
+        throw new Error(result.message);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Login failed: " + error.message);
+    }
   };
 
   return (
