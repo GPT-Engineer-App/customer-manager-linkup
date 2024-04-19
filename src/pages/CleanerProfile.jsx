@@ -10,7 +10,7 @@ const CleanerProfile = () => {
 
   useEffect(() => {
     const fetchCleanerDetails = async () => {
-      const response = await fetch(`/api/cleaners/${id}`);
+      const response = await fetch(`/api/cleaner-profile/${id}`);
       const data = await response.json();
       setCleanerDetails(data);
     };

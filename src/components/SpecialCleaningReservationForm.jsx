@@ -22,7 +22,7 @@ const SpecialCleaningReservationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/create/special-cleaning", {
+    const response = await fetch("/api/special-cleaning", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

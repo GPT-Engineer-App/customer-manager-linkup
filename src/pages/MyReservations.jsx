@@ -51,7 +51,7 @@ const MyReservations = () => {
   const toast = useToast();
 
   const handleViewQuote = async (estimate) => {
-    const response = await fetch(`/api/quotations/${estimate.cleanerId}`);
+    const response = await fetch(`/api/estimates/${estimate.cleanerId}`);
     const data = await response.json();
     console.log("Quotation details:", data);
   };
@@ -69,7 +69,7 @@ const MyReservations = () => {
   const handlePayment = async (selectedEstimate) => {
     const depositAmount = selectedEstimate.amount * 0.1;
     try {
-      const response = await fetch("/api/payments/deposit", {
+      const response = await fetch("/api/payments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

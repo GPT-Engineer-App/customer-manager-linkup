@@ -27,7 +27,7 @@ const CommercialCleaningReservationForm = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("/api/create/commercial-cleaning", {
+      const response = await fetch("/api/commercial-cleaning", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

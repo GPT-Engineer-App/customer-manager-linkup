@@ -23,7 +23,7 @@ const OfficeCleaningReservationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/create/office-cleaning", {
+    const response = await fetch("/api/office-cleaning", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
