@@ -29,8 +29,8 @@ const SignUp = () => {
 
   return (
     <Center h="100vh">
-      <Box as="form" onSubmit={handleSubmit} p={8} maxW="md" borderWidth={1} borderRadius={8} boxShadow="lg">
-        <Heading mb={6} textAlign="center">
+      <Box as="form" onSubmit={handleSubmit} p={10} maxW="md" borderWidth={1} borderRadius={8} boxShadow="xl">
+        <Heading mb={8} size="xl" textAlign="center">
           나청소 회원가입
         </Heading>
         <VStack spacing={4}>

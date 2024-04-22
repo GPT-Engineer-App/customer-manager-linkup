@@ -21,7 +21,7 @@ const 설정 = () => {
         </Text>
       </HStack>
 
-      <Button onClick={handleLogout} colorScheme="red" mt={8}>
+      <Button onClick={handleLogout} colorScheme="red" mt={8} size="lg">
         로그아웃
       </Button>
 

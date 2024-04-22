@@ -37,8 +37,8 @@ const LoginForm = () => {
   };
 
   return (
-    <Box as="form" onSubmit={handleLogin} p={4} borderWidth={1} borderRadius="lg">
-      <Heading size="lg" mb={4}>
+    <Box as="form" onSubmit={handleLogin} p={6} borderWidth={1} borderRadius="lg" boxShadow="lg">
+      <Heading size="xl" mb={6}>
         로그인
       </Heading>
       <VStack spacing={4}>

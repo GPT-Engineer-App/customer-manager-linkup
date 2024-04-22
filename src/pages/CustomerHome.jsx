@@ -39,8 +39,8 @@ const 홈화면 = () => {
 
   return (
     <Box pb={16}>
-      <Box mb={4}>
-        <Heading size="xl" textAlign="center">
+      <Box mb={6}>
+        <Heading size="2xl" fontWeight="bold" textAlign="center">
           홈화면
         </Heading>
       </Box>

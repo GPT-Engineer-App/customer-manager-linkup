@@ -7,7 +7,7 @@ const BottomTabNav = () => {
   const navigate = useNavigate();
 
   return (
-    <Box bg="white" py={2} position="fixed" bottom={0} left={0} right={0} borderTopWidth={1}>
+    <Box bg="white" py={3} position="fixed" bottom={0} left={0} right={0} borderTopWidth={1} boxShadow="sm">
       <HStack justify="space-around">
         <Button variant="ghost" onClick={() => navigate("/my-reservations")}>
           <VStack spacing={1}>
