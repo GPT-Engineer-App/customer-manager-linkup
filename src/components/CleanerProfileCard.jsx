@@ -25,9 +25,6 @@ const CleanerProfileCard = ({ id, name, rating, profileImage }) => {
         <Text ml={2}>{rating.toFixed(1)}</Text>
       </Box>
       <Button mt={4} colorScheme="blue" onClick={handleViewProfile}>
-        Submit Quote
-      </Button>
-      <Button mt={4} colorScheme="teal" onClick={() => navigate(`/submit-quote/${id}`)}>
         프로필 보기
       </Button>
     </Box>

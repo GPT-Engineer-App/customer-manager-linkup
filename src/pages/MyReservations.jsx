@@ -137,9 +137,6 @@ const MyReservations = () => {
             ))}
           </Box>
           <Button colorScheme="blue" size="sm" mr={2} onClick={() => navigate(`/edit-reservation/${reservation.id}`)}>
-            Select Quote
-          </Button>
-          <Button colorScheme="green" size="sm" onClick={() => handlePayment(reservation.id, selectedEstimate)}>
             수정
           </Button>
           <Button colorScheme="red" size="sm" mr={2} onClick={() => handleCancel(reservation.id)}>
