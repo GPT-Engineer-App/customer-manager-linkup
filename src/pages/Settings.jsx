@@ -21,6 +21,10 @@ const 설정 = () => {
         </Text>
       </HStack>
 
+      <Button onClick={handleLogout} colorScheme="red" mt={8} size="lg">
+        로그아웃
+      </Button>
+
       <VStack spacing={6} align="stretch" mt={4}>
         <HStack onClick={() => navigate("/edit-profile")} cursor="pointer">
           <Icon as={FaUser} boxSize={6} />
@@ -54,9 +58,6 @@ const 설정 = () => {
           <Icon as={FaBellSlash} boxSize={6} />
           <Text fontSize="xl">알림설정</Text>
         </HStack>
-        <Button onClick={handleLogout} colorScheme="red" mt={8} size="lg">
-          로그아웃
-        </Button>
       </VStack>
     </Box>
   );

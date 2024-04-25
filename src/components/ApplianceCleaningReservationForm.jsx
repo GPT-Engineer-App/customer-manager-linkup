@@ -26,7 +26,7 @@ const ApplianceCleaningReservationForm = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("/api/appliance-cleaning", {
+      const response = await fetch("/api/appliance-cleaning/real-time-check", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
